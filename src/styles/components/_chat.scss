@@ -1,0 +1,342 @@
+.chat-bot-icon {
+  position: fixed;
+  right: 10px;
+  top: 90vh;
+  z-index: 9999;
+  background: $primaryColor;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  width: 150px;
+  height: 53px; 
+  border-radius: 100px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  .lets-talk-txt {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;    
+    color: $white;
+    margin-left: 10px;
+  }
+
+  @include small {
+    width: 30px;
+    height: 50px;
+    border-radius: 50%;
+    .lets-talk-txt {
+      display: none;
+    }
+    img {
+      height: 20px;
+      width: 20px;
+      padding: 12px;
+    }
+  }
+}
+
+.chat-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 416px;
+  height: 555px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FCFCFC;
+  box-shadow: 0px 6px 10px rgba(39, 35, 35, 0.16);
+  border-radius: 24px;
+  box-sizing: border-box;
+  .form {
+    background: #FCFCFC;
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 24px;
+    .line {
+      width: 100%;
+      border-top: 1px solid #F2F2F2;
+      height: 1px;
+      margin-bottom: 5px;
+    }
+  }
+  .input-container {
+    display: flex;
+    width: 100%;
+
+    textarea {
+      width: 90%;
+      max-height: 40px;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      resize: none;
+      font-family: 'Montserrat';
+      font-size: 14px;
+      line-height: 18px;
+      color: #2B2B2B;
+      background: transparent;
+      white-space: pre-wrap
+    }
+    textarea::placeholder {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #B0B0B0;
+    }
+  
+    textarea:-moz-placeholder,
+    textarea::-moz-placeholder,
+    textarea:-ms-input-placeholder,
+    textarea::-webkit-input-placeholder {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: #B0B0B0;
+    }
+    .attache-button,
+    .send-button {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F2F2F2;
+      border-radius: 50%;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+    }
+    .attache-button {
+      margin-left: 2px;
+      img {
+        height: 19px;
+        width: 17px;
+        margin: 1px;
+       }
+    }
+    .send-button {
+      margin-left: 6px;
+      img {
+        height: 18px;
+        width: 18px;
+        margin-top: 2px;
+        margin-right: 2px;
+       }
+    }
+
+    .send-button-red {
+      background: $primaryColor;
+    }
+  }
+
+  @include small {
+    width: 100%;
+    height: 100vh;
+    bottom: 0;
+    top: unset;
+    border-radius: unset;
+    margin: 0 auto;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+.chat-header {
+  width: 100%;
+  height: 84px;
+  background: $primaryColor;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    padding-left: 24px;
+    width: 48px;
+    height: 48px;
+  }
+  .company-name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FCFCFC;
+    margin-left: 12px;
+  }
+  .close-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 20px;
+    .close {
+      width: 16.57px;
+      height: 1.8px;
+      padding-right: 24px;
+      
+    }
+  }
+
+  @include small {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    .company-name {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}
+
+.chat-body {
+  width: 100%;
+  height: 87%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  padding: 0 24px;
+  margin-top: 12px;
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+  .bot-answer {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    width: fit-content;
+    gap: 6px;
+    background: #F2F2F2;
+    border-radius: 24px;
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0;
+    }
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.user-message {
+  width: 100%;
+  padding: 8px 16px;
+  gap: 6px;
+  width: fit-content;
+  border: 0.5px solid #FC7895;
+  border-radius: 24px;
+  margin-top: 12px;
+  p {
+    margin: 0;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #2B2B2B;
+
+  }
+}
+
+.faq-container {
+  position: absolute;
+  top: 138px;
+  left: 24px;
+  .user-message {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background: rgba(214, 36, 75, 0.05);
+      border: 0.5px solid #FC7895;
+    }
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 6px;
+  background: #F2F2F2;
+  border-radius: 24px;
+  height: 38px;
+  margin-bottom: 15px;
+  padding: 0 25px;  
+}
+
+.dot-flashing {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: #D6244B;
+  color: #D6244B;
+  animation: dot-flashing .7s infinite linear alternate;
+  animation-delay: 0.3s;
+}
+.dot-flashing::before, .dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing::before {
+  left: -12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: #D6244B;
+  color: #D6244B;
+  animation: dot-flashing .7s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing::after {
+  left: 12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: #D6244B;
+  color: #D6244B;
+  animation: dot-flashing .7s infinite alternate;
+  animation-delay: 0.6s;
+}
+
+@keyframes dot-flashing {
+  0% {
+    background-color: #D6244B;
+  }
+  50%, 100% {
+    background-color: #e8adba;
+  }
+}
+
