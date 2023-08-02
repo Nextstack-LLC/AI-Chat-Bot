@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import ChatBot from "components/chat";
-import ErrorBoundary from './ErrorBoundary';
+import ErrorBoundary from "./ErrorBoudary";
 import "./styles/main.scss";
 
 function App(props) {
