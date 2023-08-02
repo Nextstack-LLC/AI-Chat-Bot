@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import CONSTANTS from 'constants';
+import React, { useState } from "react";
+import CONSTANTS from "constants";
 import { faq } from "faq";
-import instance from 'axiosInstance';
+import instance from "axiosInstance";
 
 export default function MyChatBot(props) {
   const [isSelected, setIsSelected] = useState(false);
@@ -29,11 +29,11 @@ export default function MyChatBot(props) {
           })
         }
         
-        const summery = str && await instance.post('/summarize', {
+        const summery = str && await instance.post("/summarize", {
           message: str
         });
 
-        const response = await instance.post('/send', {
+        const response = await instance.post("/send", {
           id: props.companyId,
           message: prompt,
           summery: summery?.data?.message,
