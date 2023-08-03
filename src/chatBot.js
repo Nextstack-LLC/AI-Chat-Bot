@@ -1,7 +1,7 @@
 import React from "react";
 import Chat from "./chat";
 import ErrorBoundary from "./ErrorBoudary";
-import "./styles/main.scss";
+import "./styles/index.css";
 
 function ChatBot(props) {
   return ( 
