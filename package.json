@@ -1,6 +1,6 @@
 {
   "name": "ns-bot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,6 @@
     "@babel/cli": "^7.22.9",
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
-    "@babel/preset-react": "^7.22.5",
-    "raw-loader": "^4.0.2"
+    "@babel/preset-react": "^7.22.5"
   }
 }
