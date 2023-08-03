@@ -1,5 +1,5 @@
 {
-  "name": "ai-chat-bot",
+  "name": "nextstack-bot",
   "version": "1.0.0",
   "description": "AI chat bot",
   "main": "dist/index.js",
