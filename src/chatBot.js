@@ -1,12 +1,12 @@
 import React from "react";
-import ChatBot from "components/chat";
+import Chat from "./chat";
 import ErrorBoundary from "./ErrorBoudary";
 import "./styles/main.scss";
 
-function App(props) {
+function ChatBot(props) {
   return ( 
     <ErrorBoundary chatchError={props.chatchError}>
-      <ChatBot
+      <Chat
         companyId={props.companyId}
         analitics={props.analitics}
         trackImpression={props.trackImpression}
@@ -15,4 +15,4 @@ function App(props) {
   )
 }
 
-export default App;
+export default ChatBot;
