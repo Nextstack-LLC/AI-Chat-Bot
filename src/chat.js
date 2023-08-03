@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CONSTANTS from "constants";
-import { faq } from "faq";
-import instance from "axiosInstance";
+import CONSTANTS from "./constants";
+import { faq } from "./faq";
+import instance from "./axiosInstance";
 
 export default function MyChatBot(props) {
   const [isSelected, setIsSelected] = useState(false);
