@@ -7,7 +7,6 @@ import "./index.css";
 const base_url = "https://chat-api.nextstack.org/api/v1";
 
 export default function MyChatBot(props) {
-  console.log(props, "props");
   const [isSelected, setIsSelected] = useState(false);
   const [chatHistory, setChatHistory] = useState([CONSTANTS.DEFAULT_MESSAGE]);
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +36,7 @@ export default function MyChatBot(props) {
           message: str
         });
 
-        const response = await instance.post(`${base_url}/send`, {
+        const response = await axios.post(`${base_url}/send`, {
           id: props.companyId,
           message: prompt,
           summery: summery?.data?.message,
@@ -150,11 +149,6 @@ export default function MyChatBot(props) {
                   }
                 } }
               />
-              <button
-                disabled={loading}
-                className="attache-button">
-                <img src="/icons/attache.webp" alt="Attache" />
-              </button>
               <button 
                 disabled={loading}
                 onClick={handleSendMessage}
