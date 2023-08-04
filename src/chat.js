@@ -3,6 +3,12 @@ import CONSTANTS from "./constants";
 import { faq } from "./faq";
 import axios from "axios";
 import "./index.css";
+import Avatar from "./icons/avatar.svg";
+import Close from "./icons/close.svg";
+import Hand from "./icons/hand.svg";
+import LetsTalk from "./icons/lets_talk.svg";
+import Send from "./icons/send.svg";
+import SendActive from "./icons/send_active.svg";
 
 const base_url = "https://chat-api.nextstack.org/api/v1";
 
@@ -81,7 +87,7 @@ export default function MyChatBot(props) {
         <div className="chat-container">
           <div className="chat-header">
             <div>
-              <img className="avatar" src="./icons/avatar.webp" alt="Avatar" />
+              <img className="avatar" src={Avatar} alt="Avatar" />
               <p className="company-name">{CONSTANTS.NEXTSTACK_LLC}</p>
             </div>
             <div
@@ -93,11 +99,11 @@ export default function MyChatBot(props) {
             >
               <img
                 className="close"
-                src="./icons/close.webp" alt="Close"
+                src={Close} alt="Close"
               />
             </div>
           </div>
-          {(!isSelected && chatHistory.length < 2) && (
+          {(!isSelected && chatHistory.length === CONSTANTS.CHAT_HISTORY_MIN_LENGTH) && (
             <div className="faq-container">
               {faq.map((item) => (
                 <div 
@@ -121,7 +127,9 @@ export default function MyChatBot(props) {
                     {item.response && (
                       <div className="bot-answer">
                         <p>{item.response}</p>
-                        {item.icon && <img src={item.icon} alt="Hand" />}
+                        {chatHistory.length === CONSTANTS.CHAT_HISTORY_MIN_LENGTH && (
+                          <img src={Hand} alt="Hand" />
+                        )}
                       </div>
                     )}
                   </li>
@@ -154,7 +162,7 @@ export default function MyChatBot(props) {
                 onClick={handleSendMessage}
                 className={`send-button ${message && 'send-button-red'}`}
               >
-                <img src={message ? './icons/send_red.webp' : './icons/send.webp'} alt="Send" />
+                <img src={message ? SendActive : Send} alt="Send" />
               </button>
             </div>
           </div>
@@ -167,7 +175,7 @@ export default function MyChatBot(props) {
             handleTrackImpression(true)
           }}
         >
-          <img src="./icons/lets_talk.webp" alt="Let's Talk" />
+          <img src={LetsTalk} alt="Let's Talk" />
           <p className="lets-talk-txt">{CONSTANTS.LETS_TALK}</p>
         </div>
       )}

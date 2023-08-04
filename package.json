@@ -1,6 +1,6 @@
 {
   "name": "ns-bot",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "",
   "main": "./build/index.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.3",
+    "svg-url-loader": "^8.0.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }

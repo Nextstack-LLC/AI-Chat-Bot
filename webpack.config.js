@@ -15,7 +15,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              // Limit the size of the inlined file
+              limit: 8192,
+            },
+          },
+        ],
+      },
     ]
   },
   externals: {
