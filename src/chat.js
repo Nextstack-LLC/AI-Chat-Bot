@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import CONSTANTS from "./constants";
 import { faq } from "./faq";
-import instance from "./axiosInstance";
+
+const base_url = "https://chat-api.nextstack.org/api/v1";
 
 export default function MyChatBot(props) {
   const [isSelected, setIsSelected] = useState(false);
@@ -29,15 +30,23 @@ export default function MyChatBot(props) {
           })
         }
         
-        const summery = str && await instance.post("/summarize", {
-          message: str
-        });
+        const summery = str && await fetch(`${base_url}/summarize`, {
+          method: "POST",
+          body: {
+            message: str
+          }
+        }).then((res) => res.json());
 
-        const response = await instance.post("/send", {
-          id: props.companyId,
-          message: prompt,
-          summery: summery?.data?.message,
-        }).finally(() => setLoading(false));
+        const response = await fetch(`${base_url}/send`, {
+          method: "POST",
+          body: {
+            id: props.companyId,
+            message: prompt,
+            summery: summery?.data?.message,
+          }
+        })
+        .then((res) => res.json())
+        .finally(() => setLoading(false));
         
         const data = chatHistory;
         data.slice(-1, 1);
