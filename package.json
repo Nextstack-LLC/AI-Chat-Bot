@@ -1,6 +1,6 @@
 {
   "name": "ns-bot",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "",
   "main": "./build/index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
+    "file-loader": "^6.2.0",
     "react": "^18.2.0"
   },
   "devDependencies": {
