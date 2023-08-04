@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path:  path.resolve(__dirname, "build"),
     filename: "index.js",
+    publicPath: "/",
     libraryTarget: "commonjs2",
   },
   module: {
