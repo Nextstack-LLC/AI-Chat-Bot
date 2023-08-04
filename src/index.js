@@ -3,7 +3,7 @@ import Chat from "./chat";
 import ErrorBoundary from "./ErrorBoudary";
 
 function ChatBot(props) {
-  if (typeof document !== 'undefined') {
+  if (process.env.IS_BROWSER) {
     return ( 
       <ErrorBoundary chatchError={props.chatchError}>
         <Chat

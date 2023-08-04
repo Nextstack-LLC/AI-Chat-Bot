@@ -1,4 +1,5 @@
-var path = require("path");
+const path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
   mode: "production",
@@ -18,6 +19,12 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    // Define a global constant to indicate the environment
+    new webpack.DefinePlugin({
+      'process.env.IS_BROWSER': JSON.stringify(true),
+    }),
+  ],
   externals: {
     react: "react"
   }
