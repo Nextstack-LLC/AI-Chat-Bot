@@ -3,7 +3,7 @@ import CONSTANTS from "./constants";
 import { faq } from "./faq";
 import axios from "axios";
 import "./index.css";
-import Avatar from "./icons/avatar.svg";
+import Avatar from "./icons/avatar.png";
 import Close from "./icons/close.svg";
 import Hand from "./icons/hand.svg";
 import LetsTalk from "./icons/lets_talk.svg";

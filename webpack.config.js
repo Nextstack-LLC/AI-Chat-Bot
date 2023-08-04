@@ -28,6 +28,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images', // You can specify the output path for the images.
+        },
+      },
     ]
   },
   externals: {
