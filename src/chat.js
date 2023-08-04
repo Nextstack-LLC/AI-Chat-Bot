@@ -81,7 +81,7 @@ export default function MyChatBot(props) {
         <div className="chat-container">
           <div className="chat-header">
             <div>
-              <img className="avatar" src="/icons/avatar.webp" alt="Avatar" />
+              <img className="avatar" src="./icons/avatar.webp" alt="Avatar" />
               <p className="company-name">{CONSTANTS.NEXTSTACK_LLC}</p>
             </div>
             <div
@@ -93,7 +93,7 @@ export default function MyChatBot(props) {
             >
               <img
                 className="close"
-                src="/icons/close.webp" alt="Close"
+                src="./icons/close.webp" alt="Close"
               />
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function MyChatBot(props) {
             </ul>
             {loading && (
               <div className="loading">
-                <div class="dot-flashing" />
+                <div className="dot-flashing" />
               </div>
             )}
           </div>
@@ -154,7 +154,7 @@ export default function MyChatBot(props) {
                 onClick={handleSendMessage}
                 className={`send-button ${message && 'send-button-red'}`}
               >
-                <img src={message ? '/icons/send_red.webp' : '/icons/send.webp'} alt="Send" />
+                <img src={message ? './icons/send_red.webp' : './icons/send.webp'} alt="Send" />
               </button>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function MyChatBot(props) {
             handleTrackImpression(true)
           }}
         >
-          <img src="/icons/lets_talk.webp" alt="Let's Talk" />
+          <img src="./icons/lets_talk.webp" alt="Let's Talk" />
           <p className="lets-talk-txt">{CONSTANTS.LETS_TALK}</p>
         </div>
       )}
