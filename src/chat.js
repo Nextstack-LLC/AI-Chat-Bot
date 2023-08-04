@@ -5,7 +5,6 @@ import axios from "axios";
 import "./index.css";
 import Avatar from "./icons/avatar.png";
 import Close from "./icons/close.svg";
-import Hand from "./icons/hand.svg";
 import LetsTalk from "./icons/lets_talk.svg";
 import Send from "./icons/send.svg";
 import SendActive from "./icons/send_active.svg";
@@ -127,8 +126,8 @@ export default function MyChatBot(props) {
                     {item.response && (
                       <div className="bot-answer">
                         <p>{item.response}</p>
-                        {chatHistory.length === CONSTANTS.CHAT_HISTORY_MIN_LENGTH && (
-                          <img src={Hand} alt="Hand" />
+                        {item.icon && (
+                          <img src={item.icon} alt="Hand" />
                         )}
                       </div>
                     )}
