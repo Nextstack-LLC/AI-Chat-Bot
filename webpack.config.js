@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
 
 
 module.exports = (env, argv) => {
@@ -35,7 +34,6 @@ module.exports = (env, argv) => {
   if (!isProduction) {
     // Add server-side rendering configuration
     config.target = 'node';
-    config.externals = [nodeExternals()];
     config.output.libraryTarget = 'commonjs2';
   }
 
