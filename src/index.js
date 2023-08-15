@@ -9,6 +9,8 @@ function ChatBot(props) {
         companyId={props.companyId}
         analitics={props.analitics}
         trackImpression={props.trackImpression}
+        avatar={props.avatar}
+        title={props.title}
       />
     </ErrorBoundary>
   )
