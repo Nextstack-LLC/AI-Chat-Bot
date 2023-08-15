@@ -3,7 +3,6 @@ import CONSTANTS from "./constants";
 import { faq } from "./faq";
 import axios from "axios";
 import "./index.css";
-import Avatar from "./icons/avatar.png";
 import Close from "./icons/close.svg";
 import LetsTalk from "./icons/lets_talk.svg";
 import Send from "./icons/send.svg";
@@ -86,8 +85,10 @@ export default function MyChatBot(props) {
         <div className="chat-container">
           <div className="chat-header">
             <div>
-              <img className="avatar" src={Avatar} alt="Avatar" />
-              <p className="company-name">{CONSTANTS.NEXTSTACK_LLC}</p>
+              {props.avatar && (
+                <img className="avatar" src={props.avatar} alt="Avatar" />
+              )}
+              <p className="company-name">{props.title ?? CONSTANTS.NEXTSTACK_LLC}</p>
             </div>
             <div
               onClick={() => {
