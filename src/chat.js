@@ -86,9 +86,15 @@ export default function MyChatBot(props) {
           <div className="chat-header">
             <div>
               {props.avatar && (
-                <img className="avatar" src={props.avatar} alt="Avatar" />
+                <img 
+                  className="avatar"
+                  src={props.avatar}
+                  alt="Avatar"
+                />
               )}
-              <p className="company-name">{props.title ?? CONSTANTS.NEXTSTACK_LLC}</p>
+              <p className="company-name">
+                {props.title ?? CONSTANTS.NEXTSTACK_LLC}
+              </p>
             </div>
             <div
               onClick={() => {
