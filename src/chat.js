@@ -92,7 +92,7 @@ export default function MyChatBot(props) {
                   alt="Avatar"
                 />
               )}
-              <p className="company-name">
+              <p className={`company-name ${!props.avatar && "ml-2"}`}>
                 {props.title ?? CONSTANTS.NEXTSTACK_LLC}
               </p>
             </div>
