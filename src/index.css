@@ -195,6 +195,10 @@ textarea::-webkit-input-placeholder {
   margin-left: 12px;
 }
 
+.chat-header .ml-2  {
+  margin-left: 24px !important;
+}
+
 .chat-header .close-container {
   display: flex;
   align-items: center;
@@ -203,8 +207,6 @@ textarea::-webkit-input-placeholder {
 }
 
 .chat-header .close-container .close {
-  width: 16.57px;
-  height: 1.8px;
   padding-right: 24px;
 }
 
