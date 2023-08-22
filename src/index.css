@@ -178,7 +178,7 @@ textarea::-webkit-input-placeholder {
   align-items: center;
 }
 
-.chat-header .avatar {
+.chat-header .avatar_container {
   padding-left: 24px;
   width: 48px;
   height: 48px;
